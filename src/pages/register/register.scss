@@ -1,0 +1,22 @@
+.map-button-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    button {
+        width: 35%;
+        margin: auto;
+    }
+}
+
+.remove-location-wrapper {
+    display: flex;
+    align-items: center;
+    .remove-icon {
+        color: #e83b3b;
+        margin-left: 0.2em;
+    }
+    .add-icon {
+        color:#26a226;
+        margin-right: 0.2em;
+    }
+}

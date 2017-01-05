@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title text-center>Login</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="no-scroll">
+    <div class="logo" padding>
+        <img src="assets/img/logo.png">
+    </div>
+    <form class="login-container" (submit)="doLogin()" #mainForm="ngForm">
+
+        <ion-item>
+            <ion-label floating primary>Username</ion-label>
+            <ion-input [(ngModel)]="loginData.username" ngModel required name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating primary>Password</ion-label>
+            <ion-input [(ngModel)]="loginData.password" ngModel required name="password" type="password" #password="ngModel">
+            </ion-input>
+        </ion-item>
+
+        <p>&nbsp;</p>
+        <button class="login-btn" ion-button block>Login</button>
+
+
+    </form>
+
+    <div block id="registerContainer" padding>
+        <a (click)="openRegister()">Register</a>
+        <a (click)="openForgotPwd()">Forgot Password</a>
+    </div>
+
+</ion-content>

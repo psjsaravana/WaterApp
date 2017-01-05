@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title text-center>Register</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form class="register-container" (submit)="handleRegister()" #mainForm="ngForm">
+
+        <ion-item>
+            <ion-input placeholder="User Name" [(ngModel)]="userData.username" required name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input placeholder="Password" [(ngModel)]="userData.password" required name="password" type="password" #password="ngModel">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input placeholder="Email" [(ngModel)]="userData.email" required name="email" type="email" #email="ngModel">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input placeholder="Mobile" minlength='10' maxlength='10' [(ngModel)]="userData.mobile" required name="mobile" type="number" #mobile="ngModel">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input placeholder="Address Line 1" [(ngModel)]="userData.address1" required name="address1" type="text" #address1="ngModel">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input placeholder="Address Line 2" [(ngModel)]="userData.address2" ngModel name="address2" type="text" #address2="ngModel">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input placeholder="Landmark" [(ngModel)]="userData.landMark" required name="landmark" type="text" #landmark="ngModel">
+            </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <div (click)="addLocation()" *ngIf="!userData.location" class="remove-location-wrapper">
+                <ion-icon class="add-icon" name="add-circle"></ion-icon> Add Location
+            </div>
+            <div *ngIf="userData.location" class="remove-location-wrapper">Location added
+                <ion-icon (click)="removeLocation()" class="remove-icon" name="remove-circle"></ion-icon>
+            </div>
+        </ion-item>
+
+        <p>&nbsp;</p>
+        <button class="login-btn" ion-button block>Register</button>
+
+
+    </form>
+
+
+</ion-content>
